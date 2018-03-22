@@ -17,6 +17,11 @@
                 <action android:name="com.darryncampbell.cordova.plugin.intent.ACTION" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+	    <intent-filter>
+              <action android:name="android.intent.action.SEND"/>
+              <category android:name="android.intent.category.DEFAULT"/>
+              <data android:mimeType="text/*"/>
+            </intent-filter>
         </config-file>
         <config-file target="AndroidManifest.xml" platform="android" parent="/manifest" mode="merge">
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,7 +42,7 @@
         </config-file>
         <source-file src="src/android/IntentShim.java" target-dir="src/com/darryncampbell/plugin/intent" />
 		<resource-file src="src/android/res/xml/provider_paths.xml" target="res/xml/provider_paths.xml"/>
-		<framework src="com.android.support:support-v4:27.1.0" />
+	    	<framework src="com.android.support:support-v4:24.1.1+" />
     </platform>
 	
 </plugin>
